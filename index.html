@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <script type="f036bf5eb8e5658e063ea1fd-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script>
+  <script type="f036bf5eb8e5658e063ea1fd-text/javascript">class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>Flujo TV Apk ↓ Comprar Cuentas ↓ Renovaciones ↓ App</title>
+  <link rel="stylesheet" href="https://flujo-tv.com/wp-content/cache/min/1/2a02662d3f52249941662687325e8138.css" media="all" data-minify="1">
+  <meta name="description" content="Comprar cuenta Flujo TV Oficial Android. ↓ Aquí puede pagar cuentas y ver precio de planes. Solicitar Demo GRATIS. Renovar Plan ↓">
+  <link rel="canonical" href="wa.me/+51904016110/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Flujo TV Apk ↓ Comprar Cuentas ↓ Renovaciones ↓ App">
+  <meta property="og:description" content="Comprar cuenta Flujo TV Oficial Android. ↓ Aquí puede pagar cuentas y ver precio de planes. Solicitar Demo GRATIS. Renovar Plan ↓">
+  <meta property="og:url" content="https://flujo-tv.com/">
+  <meta property="og:site_name" content="Flujo TV Apk">
+  <meta property="article:modified_time" content="2025-04-18T19:53:28+00:00">
+  <meta property="og:image" content="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png">
+  <meta property="og:image:width" content="960">
+  <meta property="og:image:height" content="531">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://flujo-tv.com/","url":"https://flujo-tv.com/","name":"Flujo TV Apk ↓ Comprar Cuentas ↓ Renovaciones ↓ App","isPartOf":{"@id":"wa.me/+51904016110/#website"},"about":{"@id":"https://flujo-tv.com/#organization"},"primaryImageOfPage":{"@id":"https://flujo-tv.com/#primaryimage"},"image":{"@id":"https://flujo-tv.com/#primaryimage"},"thumbnailUrl":"https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png","datePublished":"2024-03-12T15:11:15+00:00","dateModified":"2025-04-18T19:53:28+00:00","description":"Comprar cuenta Flujo TV Oficial Android. ↓ Aquí puede pagar cuentas y ver precio de planes. Solicitar Demo GRATIS. Renovar Plan ↓","breadcrumb":{"@id":"https://flujo-tv.com/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://flujo-tv.com/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https://flujo-tv.com/#primaryimage","url":"https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png","contentUrl":"https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png","width":960,"height":531,"caption":"flujo tv descargar"},{"@type":"BreadcrumbList","@id":"https://flujo-tv.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Portada"}]},{"@type":"WebSite","@id":"https://flujo-tv.com/#website","url":"https://flujo-tv.com/","name":"Flujo TV Apk","description":"Comprar Flujo TV Online","publisher":{"@id":"wa.mw/+51904016110/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://flujo-tv.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es"},{"@type":"Organization","@id":"https://flujo-tv.com/#organization","name":"Magis TV Global","url":"https://flujo-tv.com/","logo":{"@type":"ImageObject","inLanguage":"es","@id":"https://flujo-tv.com/#/schema/logo/image/","url":"https://flujo-tv.com/wp-content/uploads/2022/03/magis-tv-global.png","contentUrl":"https://flujo-tv.com/wp-content/uploads/2022/03/magis-tv-global.png","width":512,"height":512,"caption":"Magis TV Global"},"image":{"@id":"https://flujo-tv.com/#/schema/logo/image/"}}]}</script><!-- / Yoast SEO plugin. -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link href="https://fonts.gstatic.com" crossorigin rel="preconnect">
+  <link href="https://fonts.googleapis.com" crossorigin rel="preconnect">
+  <link rel="alternate" type="application/rss+xml" title="Flujo TV Apk » Feed" href="https://flujo-tv.com/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Flujo TV Apk » Feed de los comentarios" href="https://flujo-tv.com/comments/feed/">
+  <script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/flujo-tv.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\ud83d\udd25","\ud83d\udc26\u200b\ud83d\udd25")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+  <style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+  <style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+  <style id="safe-svg-svg-icon-style-inline-css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+  <style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+  <style id="generate-style-inline-css">
+body{background-color:var(--base-3);color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.grid-container{max-width:1480px;}.wp-block-group__inner-container{max-width:1480px;margin-left:auto;margin-right:auto;}@media (max-width: 892px) and (min-width: 769px){.inside-header{display:flex;flex-direction:column;align-items:center;}.site-logo, .site-branding{margin-bottom:1.5em;}#site-navigation{margin:0 auto;}.header-widget{margin-top:1.5em;}}.site-header .header-image{width:200px;}:root{--contrast:#0F172A;--contrast-2:#1E3A8A;--contrast-3:#BFDBFE;--base:#DBEAFE;--base-2:#EFF6FF;--base-3:#F8FAFC;--accent:#1D4ED8;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}body, button, input, select, textarea{font-family:Poppins, sans-serif;font-size:1.125rem;}@media (max-width:768px){body, button, input, select, textarea{font-size:1.0625rem;}}h1, h2, h3, h4, h5, h6{font-family:inherit;font-weight:700;}h1{font-size:3.75rem;line-height:1.1;}@media (max-width:768px){h1{font-size:2.5rem;}}h2{font-size:3rem;}@media (max-width:768px){h2{font-size:2rem;}}h3{font-size:2rem;}@media (max-width:768px){h3{font-size:1.5rem;}}.main-title{font-size:2rem;}@media (max-width: 1024px){.main-title{font-size:1.75rem;}}@media (max-width:768px){.main-title{font-size:1.5rem;}}.main-navigation a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{text-transform:uppercase;font-size:16px;}.single-post h2{font-size:2.5rem;}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:#db4700;}.site-description{color:var(--contrast-2);}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:#db4700;}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:#db4700;}button.menu-toggle:hover,button.menu-toggle:focus{color:#db4700;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#db4700;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:#db4700;}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--base-3);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width: 768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:#db4700;}}.inside-top-bar.grid-container{max-width:1560px;}.inside-header{padding:15px 40px 15px 40px;}.inside-header.grid-container{max-width:1560px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .menu-bar-item > a{padding-left:30px;padding-right:30px;}.main-navigation .main-nav ul ul li a{padding:10px 30px 10px 30px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:30px;}.menu-item-has-children .dropdown-menu-toggle{padding-right:30px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:30px;}.footer-widgets-container.grid-container{max-width:1560px;}.inside-site-info.grid-container{max-width:1560px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:100%;}@media (max-width: 768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+</style>
+  <link rel="stylesheet" id="generate-google-fonts-css" href="https://fonts.googleapis.com/css?family=Poppins%3Aregular%2C500%2C700&amp;display=auto&amp;ver=3.5.1" media="all"><!-- Fragmento de código de la etiqueta de Google (gtag.js) añadida por Site Kit --> <!-- Fragmento de código de Google Analytics añadido por Site Kit -->
+  <script type="rocketlazyloadscript" src="https://www.googletagmanager.com/gtag/js?id=GT-P84LBVDR" id="google_gtagjs-js" async></script>
+  <script type="rocketlazyloadscript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["flujo-tv.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-P84LBVDR");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }
+</script><!-- Finalizar fragmento de código de la etiqueta de Google (gtags.js) añadida por Site Kit -->
+  <link rel="https://api.w.org/" href="https://flujo-tv.com/wp-json/">
+  <link rel="alternate" title="JSON" type="application/json" href="https://flujo-tv.com/wp-json/wp/v2/pages/488">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://flujo-tv.com/xmlrpc.php?rsd">
+  <meta name="generator" content="WordPress 6.8">
+  <link rel="shortlink" href="https://flujo-tv.com/">
+  <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://flujo-tv.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflujo-tv.com%2F">
+  <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://flujo-tv.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflujo-tv.com%2F&amp;format=xml">
+  <meta name="generator" content="Site Kit by Google 1.150.0">
+  <link rel="icon" href="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-comprar-150x150.png" sizes="32x32">
+  <link rel="icon" href="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-comprar-300x300.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-comprar-300x300.png">
+  <meta name="msapplication-TileImage" content="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-comprar-300x300.png">
+  <style id="wp-custom-css">
+			/* Estilos para centrar la caja de comentarios en Gutenberg */
+.comment-respond {
+    max-width: 700px; /* Ajusta el ancho máximo de la caja */
+    margin: 0 auto; /* Centra la caja */
+    padding: 20px;
+    background: #f9f9f9; /* Color de fondo opcional */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Ajusta el campo de texto y botón */
+.comment-form-comment textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estiliza el botón de enviar */
+.comment-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    background: #fb621a; /* Azul de WordPress */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-form input[type="submit"]:hover {
+    background: #005177; /* Oscuro al pasar el cursor */
+}
+
+/* Centrar los comentarios y respuestas en WordPress */
+
+/* Contenedor principal de los comentarios */
+#comments {
+    max-width: 800px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px;
+}
+
+/* Cada comentario individual */
+.comment-body {
+    max-width: 650px;
+    margin: 15px auto;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para las respuestas a comentarios */
+.comment-children {
+    margin-left: 40px; /* Sangría para las respuestas */
+}
+
+/* Ajuste del ancho de los comentarios dentro de la jerarquía */
+.comment-children .comment-body {
+    max-width: 600px;
+    background: #f1f1f1; /* Color más claro para diferenciar respuestas */
+}
+
+/* Estilos para avatares y autor del comentario */
+.comment-author {
+    display: flex;
+    align-items: center;
+}
+
+.comment-author img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Ajuste del botón de respuesta */
+.comment-reply-link {
+    display: inline-block;
+    background: #fb621a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.comment-reply-link:hover {
+    background: #005177;
+}
+
+
+
+
+.site-logo img {
+  width: 200px !important;
+  height: auto;
+  max-width: unset; /* evita que el tema limite el ancho */
+}
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: auto;
+}		</style>
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style>
+  </noscript>
+ </head>
+ <body data-rsssl="1" class="home wp-singular page-template-default page page-id-488 wp-custom-logo wp-embed-responsive wp-theme-generatepress post-image-aligned-center sticky-menu-fade no-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover full-width-content" itemtype="https://schema.org/WebPage" itemscope>
+  <a class="screen-reader-text skip-link" href="#content" title="Saltar al contenido">Saltar al contenido</a>
+  <header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Sitio" itemtype="https://schema.org/WPHeader" itemscope>
+   <div class="inside-header grid-container">
+    <div class="site-logo">
+     <a href="https://flujo-tv.com/" rel="home"> <picture class="header-image is-logo-image">
+       <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png.webp 1x, https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png.webp 2x">
+       <img alt="Flujo TV Apk" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%2093'%3E%3C/svg%3E" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png 1x, https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png 2x" width="350" height="93" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png">
+       <noscript>
+        <img alt="Flujo TV Apk" src="https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png 1x, https://flujo-tv.com/wp-content/uploads/2025/04/logo-web-flujo-tv-oficial-2025.png 2x" width="350" height="93">
+       </noscript>
+      </picture> </a>
+    </div>
+    <nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Cambiar a móvil">
+     <button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> <span class="gp-icon icon-menu-bars">
+       <svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+        <path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+       </svg>
+       <svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+        <path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+       </svg></span><span class="screen-reader-text">Menú</span> </button>
+    </nav>
+    <nav class="main-navigation sub-menu-right" id="site-navigation" aria-label="Principal" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+     <div class="inside-navigation grid-container">
+      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> <span class="gp-icon icon-menu-bars">
+        <svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+         <path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+        </svg>
+        <svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+         <path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+        </svg></span><span class="screen-reader-text">Menú</span> </button>
+      <div id="primary-menu" class="main-nav">
+       <ul id="menu-header" class=" menu sf-menu">
+        <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-158"><a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/#planes">COMPRAR</a></li>
+        <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1">PEDIR APK </a></li>
+        <li id="menu-item-74" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-74"><a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/#planes">RENOVAR</a></li>
+        <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1">DOWNLOADER</a></li>
+        <li id="menu-item-73" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-73"><a href="https://flujo-tv.com/#faqs">FAQS</a></li>
+       </ul>
+      </div><a class="gbp-button--primary gb-text-70cdc40d" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1"><span class="gb-text">DECARGAR</span><span class="gb-shape">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+         <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+        </svg></span></a>
+      <p></p>
+     </div>
+    </nav>
+   </div>
+  </header>
+  <div class="site grid-container container hfeed" id="page">
+   <div class="site-content" id="content">
+    <div class="content-area" id="primary">
+     <main class="site-main" id="main">
+      <article id="post-488" class="post-488 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope>
+       <div class="inside-article">
+        <div class="entry-content" itemprop="text">
+         <section class="gbp-section has-gradient-bg gb-element-b2b3b9a5" style="--inline-bg-image: url(https://flujo-tv.com/wp-content/uploads/2025/04/ver-partido-de-futbol-en-flujo-tv-scaled.jpg)">
+          <span class="gb-shape gb-shape-ad79ed53 gb-shape--divider">
+           <svg preserveAspectRatio="none" viewBox="0 0 1200 176" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 176h1200V14L800 88 400 0 0 156z" />
+           </svg></span>
+          <div class="gbp-section__inner gb-element-17cc46c2">
+           <div class="gb-element-2582588b">
+            <h1 class="gb-text gbp-section__headline">Flujo <mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">TV</mark></h1>
+            <h1 class="gb-text gbp-section__headline"><mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">Comprar </mark>Flujo TV 2025</h1>
+            <div class="gb-text gbp-section__text gb-text-7e90ddec">
+             Adquiere una <strong>cuenta de Flujo TV 7.3.2</strong> y disfruta de más de 1200 canales, junto a un extenso catálogo de películas y series populares. Ofrecemos precios exclusivos para usuarios en todos los países. Ya puedes <strong>contratar un plan premium</strong>.
+            </div>
+            <div class="gb-element-8258d25a">
+             <a class="gbp-button--primary gb-text-a15d08dd" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/SOREM PLANES" rel="nofollow"><span class="gb-shape">
+               <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+               </svg></span><span class="gb-text">COMPRAR</span></a> <a class="gbp-button--secondary gb-text-76c3f68b" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/#SOREM PLANES" rel="nofollow"><span class="gb-shape">
+               <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z" />
+               </svg></span><span class="gb-text">RENOVAR</span></a>
+            </div>
+           </div>
+           <div class="gb-element-cdb8e282">
+            <a class="gbp-button--primary gb-text-80517467" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+              </svg></span><span class="gb-text">DESCARGAR FLUJO TV</span></a>
+           </div>
+           <div class="wp-block-image">
+            <figure class="aligncenter">
+             <img fetchpriority="high" decoding="async" width="960" height="531" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20960%20531'%3E%3C/svg%3E" alt="" class="wp-image-341" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png 960w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-300x166.png 300w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-768x425.png 768w" data-lazy-sizes="(max-width: 960px) 100vw, 960px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png">
+             <noscript>
+              <img fetchpriority="high" decoding="async" width="960" height="531" src="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png" alt="" class="wp-image-341" srcset="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png 960w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-300x166.png 300w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-768x425.png 768w" sizes="(max-width: 960px) 100vw, 960px">
+             </noscript>
+            </figure>
+           </div>
+          </div>
+          <div class="gb-element-4dd21782">
+           <div class="gb-element-3be5a8ce">
+            <h2 class="gb-text gb-text-96f761d1">Las mejores opciones de entretenimiento para toda la familia.</h2>
+            <h3 class="gb-text gb-text-15667e68"><mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">Comprar flujo tv Ecuador</mark></h3>
+           </div>
+           <p class="gb-text gb-text-60314436">Ofrecemos una extensa biblioteca con contenido variado para toda la familia, incluyendo canales 24/7 de anime, series de TV, películas, noticias, documentales, música y más. <a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/">Descargar flujo tv</a> gratis.</p>
+          </div>
+         </section>
+         <div>
+          <div class="gbp-section">
+           <div class="gbp-section__inner gb-element-521ab8c8">
+            <div class="gb-element-6d7ddf92">
+             <div class="gb-text gbp-section__tagline">
+              <strong>Comprar cuenta Flujo TV Online</strong>
+             </div>
+             <h2 class="gb-text gbp-section__headline" id="planes"><mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">Precios y planes de</mark> flujo tv 2025</h2>
+             <div class="gb-text gbp-section__text">
+              Aquí encontrarás los precios de cada plan, con increíbles ofertas y descuentos para&nbsp;<strong>adquirir o renovar la app de Flujo TV</strong>. Sin compromisos: puedes cancelar en cualquier momento.
+              <br>
+             </div>
+            </div>
+           </div>
+           <div class="gb-element-a366f760">
+            <div class="gb-element-706591e0">
+             <div class="gbp-section--background gb-element-e913c990">
+              <div class="gb-text gb-text-e3e3e186">
+               1 AÑO
+              </div>
+              <div class="gb-element-377e90d3">
+               <div class="gb-text gb-text-1811496b">
+                S/170 SOLES
+              
+               </div>
+              </div>
+              <div class="gb-text">
+               (+2 MESES DE REGALO)
+              </div>
+             </div>
+             <div class="gb-element-e2002473">
+              <div class="gb-text-75f161a8">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">Ver en 3 Pantallas</span>
+              </div>
+              <div class="gb-text-524d9ae4">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Calidad HD y FHD</span>
+              </div>
+              <div class="gb-text-6ee3f980">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Más de +1000 Canales</span>
+              </div>
+              <div class="gb-text-3342c52d">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Canales +18</span>
+              </div>
+              <div class="gb-element-fb1b9f8c">
+               <a class="gbp-button--primary gb-text-4bd821df" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+                 <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+                 </svg></span><span class="gb-text">COMPRAR</span></a>
+              </div>
+             </div>
+            </div>
+            <div class="gb-element-3f3e34b2">
+             <div class="gbp-section--background gb-element-d79af01c">
+              <div class="gb-text gb-text-953e3193">
+               1 MES
+              </div>
+              <div class="gb-element-4c5068eb">
+               <div class="gb-text gb-text-58912672">
+                S/. 18 SOLES
+               </div>
+              </div>
+              <div class="gb-text">
+               (30 DÍAS)
+              </div>
+             </div>
+             <div class="gb-element-36448214">
+              <div class="gb-text-5cd86e22">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">Ver en 3 Pantallas</span>
+              </div>
+              <div class="gb-text-a36c8e2c">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Calidad HD y FHD</span>
+              </div>
+              <div class="gb-text-c149673e">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Más de +1000 Canales</span>
+              </div>
+              <div class="gb-text-e2e69a4f">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Canales +18</span>
+              </div>
+              <div class="gb-element-acea14f0">
+               <a class="gbp-button--primary gb-text-c4fe6999" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+                 <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+                 </svg></span><span class="gb-text">COMPRAR</span></a>
+              </div>
+             </div>
+            </div>
+            <div class="gb-element-590ba02a">
+             <div class="gbp-section--background gb-element-0311cd83">
+              <div class="gb-text gb-text-48cf26e3">
+               3 MESES
+              </div>
+              <div class="gb-element-f8758173">
+               <div class="gb-text gb-text-dcad6453">
+                S/. 52 SOLES
+               </div>
+              </div>
+              <div class="gb-text">
+               (90 DÍAS)
+              </div>
+             </div>
+             <div class="gb-element-c4a01b9e">
+              <div class="gb-text-bf68a2ce">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">Ver en 3 Pantallas</span>
+              </div>
+              <div class="gb-text-998be3c3">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Calidad HD y FHD</span>
+              </div>
+              <div class="gb-text-4581005d">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Más de +1000 Canales</span>
+              </div>
+              <div class="gb-text-546643a9">
+               <span class="gb-shape">
+                <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                </svg></span><span class="gb-text">&nbsp;Canales +18</span>
+              </div>
+              <div class="gb-element-49acd517">
+               <a class="gbp-button--primary gb-text-a45ecea5" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+                 <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+                 </svg></span><span class="gb-text">COMPRAR</span></a>
+              </div>
+             </div>
+            </div>
+            <div>
+             <div class="gb-element-f775674c">
+              <div class="gbp-section--background gb-element-cd978505">
+               <div class="gb-text gb-text-14d9d844">
+                6 meses
+               </div>
+               <div class="gb-element-2f49c4d5">
+                <div class="gb-text gb-text-f9bbac33">
+                 S/. 99 SOLES
+                </div>
+               </div>
+               <div class="gb-text">
+                (+1 MES DE REGALO)
+               </div>
+              </div>
+              <div class="gb-element-43ae7122">
+               <div class="gb-text-09a36e5f">
+                <span class="gb-shape">
+                 <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                 </svg></span><span class="gb-text">Ver en 3 Pantallas</span>
+               </div>
+               <div class="gb-text-c1a8be31">
+                <span class="gb-shape">
+                 <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                 </svg></span><span class="gb-text">&nbsp;Calidad HD y FHD</span>
+               </div>
+               <div class="gb-text-893c32f1">
+                <span class="gb-shape">
+                 <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                 </svg></span><span class="gb-text">&nbsp;Más de +1000 Canales</span>
+               </div>
+               <div class="gb-text-d6a8904c">
+                <span class="gb-shape">
+                 <svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                 </svg></span><span class="gb-text">&nbsp;Canales +18</span>
+               </div>
+               <div class="gb-element-fd7ecca8">
+                <a class="gbp-button--primary gb-text-f74fd92d" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+                  <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+                  </svg></span><span class="gb-text">COMPRAR</span></a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="gbp-section">
+           <div class="gbp-section__inner gbp-card--border gb-element-7d49093f">
+            <div>
+             <h3 class="gb-text gb-text-a3023132">¿<mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">Ya compre</mark>, dónde mandan mis datos de acceso?</h3>
+             <p class="gb-text gbp-section__text gb-text-1217ad56">Si ya ha comprado un plan,&nbsp;recuerde que se mandarán por correo sus datos de acceso, o también los puede solicitar por el chat online de abajo. (<strong><em>Debe mandar foto del recibo y correo electrónico con el que hizo la compra</em>)</strong> Saludos 🤝<br><a href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1"></a></p>
+            </div>
+            <div>
+             <div class="gb-element-12053abc">
+              <a class="gbp-button--primary gb-text-59aa37a0" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+                <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                </svg></span><span class="gb-text">chat online</span></a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <section class="gbp-section">
+          <div class="gb-element-844b9a9d">
+           <div class="gb-element-6129ce1c">
+            <div class="gbp-card gb-element-e51c04d7">
+             <div>
+              <h2 class="gb-text gbp-section__headline gb-text-fd311f91">CONTRATAR FLUJOTV ONLINE CONNSOTEM</h2>
+             </div>
+             <div class="gb-text gbp-section__text gb-text-fab0237e">
+              ¡Olvídate de los cortes, la mala calidad y las limitaciones de la TV tradicional! Con nuestro servicio IPTV, tendrás <strong>acceso a miles de canales en vivo, series y películas en máxima calidad</strong>, sin restricciones ni costosos contratos.
+             </div><a class="gbp-button--primary gb-text-e326beff" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+               <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+               </svg></span><span class="gb-text">COMPRAR FLUJOTV</span></a>
+             <div class="gb-text gbp-section__text gb-text-b84c4f76">
+              ¡No te quedes sin entretenimiento! Suscríbete a nuestro plan de televisión. Además, contamos con <strong><span style="text-decoration: underline;">métodos de pago 100% seguros y compatibles con todos los países</span></strong>, para que puedas contratar tu plan de forma rápida y confiable, estés donde estés.
+             </div>
+             <div class="gb-element-1001c9b1"></div>
+            </div>
+            <div class="gbp-card gb-element-bf960ec5">
+             <figure class="wp-block-image size-full is-style-default">
+              <picture decoding="async" class="wp-image-608">
+               <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv.jpg.webp 784w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-150x150.jpg.webp 150w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-300x300.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-768x766.jpg.webp 768w" sizes="(max-width: 784px) 100vw, 784px">
+               <img decoding="async" width="784" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20784%20782'%3E%3C/svg%3E" alt="ver peliculas en flujotv" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv.jpg 784w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-150x150.jpg 150w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-300x300.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-768x766.jpg 768w" data-lazy-sizes="(max-width: 784px) 100vw, 784px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv.jpg">
+               <noscript>
+                <img decoding="async" width="784" height="782" src="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv.jpg" alt="ver peliculas en flujotv" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv.jpg 784w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-150x150.jpg 150w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-300x300.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-768x766.jpg 768w" sizes="(max-width: 784px) 100vw, 784px">
+               </noscript>
+              </picture>
+             </figure>
+             <h3 class="gb-text gbp-section__headline gb-text-2d98b5d6">Films &amp; Series</h3>
+             <div class="gb-text gbp-section__text gb-text-063c312d">
+              En Flujo TV para Android, podrás acceder a estrenos de películas que se actualizan semanal y mensualmente.
+             </div>
+            </div>
+            <div class="gbp-card gb-element-5c22ab42">
+             <picture decoding="async" class="gb-media-63fc1d2c" title="partidos de futbol flujo tv">
+              <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv.jpg.webp 780w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-300x297.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-768x760.jpg.webp 768w" sizes="(max-width: 780px) 100vw, 780px">
+              <img decoding="async" width="780" height="772" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20780%20772'%3E%3C/svg%3E" alt="partidos de futbol flujo tv" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv.jpg 780w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-300x297.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-768x760.jpg 768w" data-lazy-sizes="(max-width: 780px) 100vw, 780px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv.jpg">
+              <noscript>
+               <img decoding="async" width="780" height="772" src="https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv.jpg" alt="partidos de futbol flujo tv" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv.jpg 780w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-300x297.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/partidos-de-futbol-flujo-tv-768x760.jpg 768w" sizes="(max-width: 780px) 100vw, 780px">
+              </noscript>
+             </picture>
+             <h3 class="gb-text gbp-section__headline gb-text-8808a776">Deporte en Vivo</h3>
+             <div class="gb-text gbp-section__text gb-text-d0afe7aa">
+              Disfruta de más de 90 canales deportivos de América Latina y Europa, con transmisión en vivo y en HD del mundial y otros eventos deportivos.
+             </div>
+            </div>
+            <div class="gbp-card gb-element-ae219f81">
+             <picture decoding="async" class="gb-media-bd64c5ea" title="contenido de niños para flujotv">
+              <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv.jpg.webp 782w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-150x150.jpg.webp 150w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-300x298.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-768x762.jpg.webp 768w" sizes="(max-width: 782px) 100vw, 782px">
+              <img decoding="async" width="782" height="776" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20776'%3E%3C/svg%3E" alt="contenido de niños para flujotv" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv.jpg 782w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-150x150.jpg 150w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-300x298.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-768x762.jpg 768w" data-lazy-sizes="(max-width: 782px) 100vw, 782px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv.jpg">
+              <noscript>
+               <img decoding="async" width="782" height="776" src="https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv.jpg" alt="contenido de niños para flujotv" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv.jpg 782w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-150x150.jpg 150w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-300x298.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/contenido-de-ninos-para-flujotv-768x762.jpg 768w" sizes="(max-width: 782px) 100vw, 782px">
+              </noscript>
+             </picture>
+             <h3 class="gb-text gbp-section__headline gb-text-91d8f52d">Películas Kids<br></h3>
+             <div class="gb-text gbp-section__text gb-text-fcee3a9d">
+              Ofrecemos el mejor contenido para niños, con películas y series exclusivas pensadas para los más pequeños del hogar.
+             </div>
+            </div>
+            <div class="gbp-card gb-element-08dc6063">
+             <picture decoding="async" class="gb-media-0ebe3425" title="en que dispositivos funciona flujo tv">
+              <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv.jpg.webp 786w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-300x293.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-768x750.jpg.webp 768w" sizes="(max-width: 786px) 100vw, 786px">
+              <img decoding="async" width="786" height="768" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20786%20768'%3E%3C/svg%3E" alt="en que dispositivos funciona flujo tv" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv.jpg 786w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-300x293.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-768x750.jpg 768w" data-lazy-sizes="(max-width: 786px) 100vw, 786px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv.jpg">
+              <noscript>
+               <img decoding="async" width="786" height="768" src="https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv.jpg" alt="en que dispositivos funciona flujo tv" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv.jpg 786w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-300x293.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/en-que-dispositivos-funciona-flujo-tv-768x750.jpg 768w" sizes="(max-width: 786px) 100vw, 786px">
+              </noscript>
+             </picture>
+             <h3 class="gb-text gbp-section__headline gb-text-0c79d19e">Compatibilidad</h3>
+             <div class="gb-text gbp-section__text gb-text-a748b379">
+              Disfruta en smart TV, tablet, celular, TV box o Fire Stick para que todos puedan ver. Además, permite hasta 3 pantallas simultáneas.
+             </div>
+            </div>
+           </div>
+          </div>
+          <section class="gbp-section gb-element-36fdca4b">
+           <div class="gbp-section__inner gb-element-7991206f">
+            <div class="gb-element-1b1770d4">
+             <h4 class="gb-text gbp-section__headline gb-text-570fd5b6">Películas y Series</h4>
+             <h2 class="gb-text gbp-section__headline gb-text-d1ad47f6"><strong>Estrenos&nbsp;recientes de <mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">películas y series</mark> en calidad HD y FHD.</strong></h2>
+             <div class="gb-text gbp-section__text gb-text-19678661">
+              Encuentra aquí las últimas actualizaciones en películas y series con audio en latino y castellano. La opción ideal para disfrutar en familia. Adquiere tu <strong>plan de Flujo TV Global</strong> hoy mismo.
+             </div>
+             <p class="db-sm-text gb-text-85cfe9fa"><span class="gb-shape">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" height="27" width="27">
+                <path fill="currentColor" d="M25.7075 24.125L24.125 25.7075C23.9375 25.8949 23.6832 26.0002 23.4181 26.0002C23.153 26.0002 22.8988 25.8949 22.7112 25.7075L16.5 19.5C16.3848 19.3846 16.2432 19.299 16.0874 19.2509C15.9316 19.2027 15.7663 19.1934 15.6061 19.2237C15.4459 19.254 15.2955 19.3231 15.1681 19.4248C15.0406 19.5266 14.94 19.658 14.875 19.8075L12.4425 25.4038C12.3597 25.586 12.2241 25.7393 12.0533 25.8436C11.8824 25.948 11.6842 25.9986 11.4843 25.9891C11.2843 25.9795 11.0918 25.9102 10.9317 25.79C10.7716 25.6698 10.6513 25.5044 10.5862 25.315L4.05124 5.30502C3.99774 5.13128 3.99262 4.94623 4.03642 4.76979C4.08023 4.59335 4.1713 4.43219 4.29985 4.30364C4.4284 4.17509 4.58956 4.08401 4.76601 4.04021C4.94245 3.9964 5.12749 4.00152 5.30124 4.05502L25.3137 10.585C25.5031 10.65 25.6685 10.7704 25.7887 10.9305C25.9089 11.0906 25.9782 11.2831 25.9878 11.483C25.9973 11.683 25.9467 11.8812 25.8423 12.0521C25.738 12.2229 25.5848 12.3585 25.4025 12.4413L19.8062 14.875C19.6568 14.9402 19.5255 15.0409 19.4239 15.1684C19.3223 15.2959 19.2534 15.4463 19.2232 15.6065C19.193 15.7667 19.2024 15.9319 19.2507 16.0876C19.2989 16.2434 19.3845 16.3849 19.5 16.5L25.7087 22.7088C25.8018 22.8018 25.8756 22.9122 25.926 23.0337C25.9763 23.1553 26.0021 23.2856 26.002 23.4172C26.0019 23.5487 25.9758 23.679 25.9253 23.8004C25.8747 23.9219 25.8007 24.0322 25.7075 24.125Z" opacity="0.2" /> <path fill="currentColor" d="M20.205 15.7913L25.8012 13.3588C26.1699 13.1953 26.4805 12.9242 26.6923 12.5811C26.9041 12.2379 27.0073 11.8388 26.9882 11.4359C26.9692 11.0331 26.8288 10.6455 26.5855 10.3239C26.3422 10.0023 26.0074 9.7617 25.625 9.63377L5.61496 3.10002C5.26501 2.98786 4.89092 2.97428 4.53375 3.06078C4.17659 3.14728 3.85017 3.33052 3.59031 3.59037C3.33046 3.85023 3.14722 4.17665 3.06072 4.53381C2.97422 4.89098 2.9878 5.26507 3.09996 5.61502L9.63371 25.625C9.757 26.0111 9.99587 26.35 10.318 26.5959C10.6402 26.8418 11.03 26.9829 11.435 27H11.5337C11.922 27.0013 12.302 26.8883 12.6265 26.6752C12.951 26.462 13.2057 26.1581 13.3587 25.8013L15.7912 20.205L22 26.4138C22.1857 26.5995 22.4062 26.7469 22.6489 26.8474C22.8915 26.948 23.1517 26.9997 23.4143 26.9997C23.677 26.9997 23.9371 26.948 24.1798 26.8474C24.4225 26.7469 24.643 26.5995 24.8287 26.4138L26.4137 24.8288C26.5995 24.643 26.7468 24.4226 26.8474 24.1799C26.9479 23.9372 26.9997 23.6771 26.9997 23.4144C26.9997 23.1517 26.9479 22.8916 26.8474 22.6489C26.7468 22.4062 26.5995 22.1857 26.4137 22L20.205 15.7913ZM23.4137 25L17.2062 18.7913C16.9757 18.5604 16.6922 18.3895 16.3805 18.2934C16.0687 18.1972 15.7382 18.1788 15.4178 18.2397C15.0973 18.3006 14.7965 18.439 14.5418 18.6427C14.287 18.8465 14.086 19.1095 13.9562 19.4088L11.5287 24.99L4.99996 5.00002L24.9837 11.5263L19.4037 13.9525C19.1044 14.0823 18.8414 14.2834 18.6377 14.5381C18.4339 14.7929 18.2955 15.0936 18.2346 15.4141C18.1738 15.7345 18.1922 16.0651 18.2883 16.3768C18.3845 16.6885 18.5554 16.972 18.7862 17.2025L25 23.4138L23.4137 25ZM9.99996 2.00002V1.00002C9.99996 0.734805 10.1053 0.480451 10.2929 0.292914C10.4804 0.105378 10.7347 2.124e-05 11 2.124e-05C11.2652 2.124e-05 11.5195 0.105378 11.7071 0.292914C11.8946 0.480451 12 0.734805 12 1.00002V2.00002C12 2.26524 11.8946 2.51959 11.7071 2.70713C11.5195 2.89466 11.2652 3.00002 11 3.00002C10.7347 3.00002 10.4804 2.89466 10.2929 2.70713C10.1053 2.51959 9.99996 2.26524 9.99996 2.00002ZM-3.97951e-05 11C-3.97951e-05 10.7348 0.105317 10.4805 0.292853 10.2929C0.48039 10.1054 0.734744 10 0.99996 10H1.99996C2.26518 10 2.51953 10.1054 2.70707 10.2929C2.8946 10.4805 2.99996 10.7348 2.99996 11C2.99996 11.2652 2.8946 11.5196 2.70707 11.7071C2.51953 11.8947 2.26518 12 1.99996 12H0.99996C0.734744 12 0.48039 11.8947 0.292853 11.7071C0.105317 11.5196 -3.97951e-05 11.2652 -3.97951e-05 11ZM14.1062 2.55252L15.1062 0.552521C15.2249 0.315318 15.4329 0.134978 15.6846 0.0511724C15.9362 -0.0326329 16.2109 -0.0130381 16.4481 0.105646C16.6853 0.224331 16.8656 0.432383 16.9494 0.684033C17.0332 0.935683 17.0136 1.21032 16.895 1.44752L15.895 3.44752C15.8362 3.56497 15.7549 3.6697 15.6556 3.75572C15.5564 3.84174 15.4412 3.90737 15.3166 3.94887C15.192 3.99037 15.0604 4.00691 14.9294 3.99757C14.7984 3.98822 14.6705 3.95316 14.5531 3.8944C14.4356 3.83563 14.3309 3.75431 14.2449 3.65507C14.1589 3.55583 14.0932 3.44061 14.0517 3.31601C14.0102 3.19141 13.9937 3.05985 14.003 2.92885C14.0124 2.79785 14.0474 2.66997 14.1062 2.55252ZM3.89496 14.5525C3.95381 14.67 3.98892 14.798 3.99828 14.9291C4.00764 15.0602 3.99106 15.1919 3.9495 15.3165C3.90794 15.4412 3.84221 15.5565 3.75606 15.6558C3.66992 15.755 3.56505 15.8363 3.44746 15.895L1.44746 16.895C1.21026 17.0137 0.935622 17.0333 0.683972 16.9495C0.432322 16.8657 0.22427 16.6854 0.105585 16.4481C-0.0130991 16.2109 -0.032694 15.9363 0.0511114 15.6847C0.134917 15.433 0.315257 15.225 0.55246 15.1063L2.55246 14.1063C2.6699 14.0474 2.7978 14.0122 2.92884 14.0027C3.05988 13.9933 3.1915 14.0098 3.31618 14.0512C3.44085 14.0927 3.55614 14.1583 3.65545 14.2443C3.75476 14.3303 3.83615 14.435 3.89496 14.5525Z" />
+               </svg></span><span class="gb-text"><strong>Filmes de estreno:</strong> Lo más reciente lo tienes aquí.</span></p>
+             <p class="db-sm-text gb-text-1d336fa5"><span class="gb-shape">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 28 28" height="28" width="28">
+                <path fill="currentColor" d="M21.1255 13.8758L13.8755 21.1258C13.3129 21.6884 12.5499 22.0044 11.7543 22.0044C10.9587 22.0044 10.1956 21.6884 9.63302 21.1258L6.87552 18.3646C6.3141 17.8021 5.99878 17.0399 5.99878 16.2452C5.99878 15.4505 6.3141 14.6883 6.87552 14.1258L14.1255 6.8758C14.6881 6.31324 15.4511 5.99719 16.2468 5.99719C17.0424 5.99719 17.8054 6.31324 18.368 6.8758L21.1255 9.63705C21.6869 10.1995 22.0023 10.9617 22.0023 11.7564C22.0023 12.5511 21.6869 13.3134 21.1255 13.8758Z" opacity="0.2" /> <path fill="currentColor" d="M27.7081 0.293287C27.6152 0.20031 27.5049 0.126551 27.3835 0.0762268C27.2621 0.0259025 27.132 0 27.0006 0C26.8691 0 26.739 0.0259025 26.6176 0.0762268C26.4962 0.126551 26.3859 0.20031 26.2931 0.293287L19.7431 6.84454L19.0718 6.17204C18.3208 5.42322 17.3036 5.00272 16.2431 5.00272C15.1825 5.00272 14.1653 5.42322 13.4143 6.17204L10.5006 9.08704L9.70806 8.29329C9.52042 8.10565 9.26592 8.00023 9.00056 8.00023C8.73519 8.00023 8.4807 8.10565 8.29306 8.29329C8.10542 8.48093 8 8.73542 8 9.00079C8 9.26615 8.10542 9.52065 8.29306 9.70829L9.08681 10.5008L6.17181 13.4145C5.80028 13.786 5.50556 14.227 5.30448 14.7123C5.1034 15.1977 4.99991 15.7179 4.99991 16.2433C4.99991 16.7687 5.1034 17.2889 5.30448 17.7742C5.50556 18.2596 5.80028 18.7006 6.17181 19.072L6.84431 19.7433L0.293056 26.2933C0.200146 26.3862 0.126445 26.4965 0.0761627 26.6179C0.02588 26.7393 0 26.8694 0 27.0008C0 27.1322 0.02588 27.2623 0.0761627 27.3837C0.126445 27.5051 0.200146 27.6154 0.293056 27.7083C0.480697 27.8959 0.735192 28.0013 1.00056 28.0013C1.13195 28.0013 1.26206 27.9755 1.38345 27.9252C1.50485 27.8749 1.61515 27.8012 1.70806 27.7083L8.25806 21.157L8.92931 21.8295C9.68045 22.578 10.6976 22.9983 11.7581 22.9983C12.8185 22.9983 13.8357 22.578 14.5868 21.8295L17.5006 18.9145L18.2931 19.7083C18.386 19.8012 18.4963 19.8749 18.6177 19.9252C18.7391 19.9755 18.8692 20.0013 19.0006 20.0013C19.132 20.0013 19.2621 19.9755 19.3835 19.9252C19.5048 19.8749 19.6151 19.8012 19.7081 19.7083C19.801 19.6154 19.8747 19.5051 19.9249 19.3837C19.9752 19.2623 20.0011 19.1322 20.0011 19.0008C20.0011 18.8694 19.9752 18.7393 19.9249 18.6179C19.8747 18.4965 19.801 18.3862 19.7081 18.2933L18.9143 17.5008L21.8293 14.587C22.2008 14.2156 22.4956 13.7746 22.6966 13.2892C22.8977 12.8039 23.0012 12.2837 23.0012 11.7583C23.0012 11.2329 22.8977 10.7127 22.6966 10.2273C22.4956 9.74198 22.2008 9.30098 21.8293 8.92954L21.1568 8.25829L27.7081 1.70829C27.801 1.61541 27.8748 1.50513 27.9251 1.38373C27.9754 1.26233 28.0013 1.1322 28.0013 1.00079C28.0013 0.869371 27.9754 0.739244 27.9251 0.617846C27.8748 0.496448 27.801 0.38616 27.7081 0.293287ZM13.1718 20.4183C12.7968 20.7931 12.2883 21.0036 11.7581 21.0036C11.2278 21.0036 10.7193 20.7931 10.3443 20.4183L7.58681 17.657C7.21202 17.282 7.00148 16.7735 7.00148 16.2433C7.00148 15.7131 7.21202 15.2046 7.58681 14.8295L10.5006 11.9145L16.0868 17.5008L13.1718 20.4183ZM20.4143 13.1758L17.5006 16.087L11.9143 10.5008L14.8293 7.58704C15.2043 7.21225 15.7129 7.00171 16.2431 7.00171C16.7733 7.00171 17.2818 7.21225 17.6568 7.58704L20.4143 10.337C20.6001 10.5228 20.7474 10.7433 20.848 10.9859C20.9485 11.2286 21.0003 11.4887 21.0003 11.7514C21.0003 12.0141 20.9485 12.2742 20.848 12.5169C20.7474 12.7596 20.6001 12.9801 20.4143 13.1658V13.1758ZM9.05181 2.31704C8.96793 2.06541 8.98745 1.79078 9.10607 1.55354C9.22468 1.31631 9.43268 1.13591 9.68431 1.05204C9.93593 0.968162 10.2106 0.98768 10.4478 1.1063C10.685 1.22491 10.8654 1.43291 10.9493 1.68454L11.9493 4.68454C11.9908 4.80913 12.0074 4.94068 11.9981 5.07168C11.9888 5.20268 11.9538 5.33057 11.895 5.44803C11.8363 5.5655 11.755 5.67025 11.6558 5.75629C11.5566 5.84234 11.4414 5.90801 11.3168 5.94954C11.0652 6.03341 10.7905 6.01389 10.5533 5.89528C10.4358 5.83654 10.3311 5.75525 10.245 5.65603C10.159 5.55682 10.0933 5.44163 10.0518 5.31704L9.05181 2.31704ZM1.05181 9.68454C1.09333 9.55994 1.15899 9.44474 1.24503 9.34552C1.33108 9.2463 1.43583 9.165 1.5533 9.10627C1.67077 9.04754 1.79865 9.01252 1.92966 9.00321C2.06066 8.99391 2.19221 9.0105 2.31681 9.05204L5.31681 10.052C5.4414 10.0936 5.55659 10.1592 5.6558 10.2453C5.75502 10.3313 5.83631 10.4361 5.89505 10.5535C5.95378 10.671 5.9888 10.7989 5.99811 10.9299C6.00742 11.0609 5.99084 11.1924 5.94931 11.317C5.90778 11.4416 5.84211 11.5568 5.75606 11.656C5.67001 11.7552 5.56527 11.8365 5.4478 11.8953C5.33034 11.954 5.20245 11.989 5.07145 11.9983C4.94045 12.0077 4.8089 11.9911 4.68431 11.9495L1.68431 10.9495C1.55971 10.908 1.44451 10.8424 1.34529 10.7563C1.24607 10.6703 1.16477 10.5655 1.10604 10.448C1.04731 10.3306 1.01229 10.2027 1.00298 10.0717C0.993675 9.94068 1.01027 9.80913 1.05181 9.68454ZM26.9493 18.317C26.9078 18.4416 26.8421 18.5568 26.7561 18.656C26.67 18.7553 26.5653 18.8366 26.4478 18.8953C26.3303 18.954 26.2025 18.9891 26.0715 18.9984C25.9405 19.0077 25.8089 18.9911 25.6843 18.9495L22.6843 17.9495C22.4327 17.8657 22.2247 17.6853 22.1061 17.448C21.9875 17.2108 21.9679 16.9362 22.0518 16.6845C22.1357 16.4329 22.3161 16.2249 22.5533 16.1063C22.7905 15.9877 23.0652 15.9682 23.3168 16.052L26.3168 17.052C26.4414 17.0936 26.5566 17.1592 26.6558 17.2453C26.755 17.3313 26.8363 17.4361 26.8951 17.5535C26.9538 17.671 26.9888 17.7989 26.9981 17.9299C27.0074 18.0609 26.9908 18.1924 26.9493 18.317ZM18.9493 25.6845C19.0332 25.9362 19.0137 26.2108 18.895 26.448C18.7764 26.6853 18.5684 26.8657 18.3168 26.9495C18.0652 27.0334 17.7905 27.0139 17.5533 26.8953C17.3161 26.7767 17.1357 26.5687 17.0518 26.317L16.0518 23.317C15.9679 23.0654 15.9875 22.7908 16.1061 22.5535C16.2247 22.3163 16.4327 22.1359 16.6843 22.052C16.9359 21.9682 17.2106 21.9877 17.4478 22.1063C17.685 22.2249 17.8654 22.4329 17.9493 22.6845L18.9493 25.6845Z" />
+               </svg></span><span class="gb-text"><strong>Miles de horas de VOD:</strong> Amplio catálogo de VOD.</span></p>
+             <p class="db-sm-text gb-text-bd269616"><span class="gb-shape">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 22" height="22" width="30">
+                <path fill="currentColor" d="M29.0002 11C29.0002 13.6521 27.9466 16.1957 26.0712 18.071C24.1959 19.9464 21.6523 21 19.0002 21H8.00015C7.0076 20.9987 6.02666 20.7865 5.12242 20.3772C4.21817 19.9679 3.4113 19.371 2.75535 18.6261C2.09939 17.8812 1.60934 17.0054 1.31773 16.0566C1.02611 15.1079 0.939596 14.1079 1.06392 13.1232C1.18824 12.1385 1.52055 11.1914 2.03881 10.3449C2.55707 9.49843 3.24942 8.77182 4.06993 8.21332C4.89044 7.65482 5.82034 7.27719 6.79793 7.1055C7.77552 6.93381 8.77844 6.97198 9.74015 7.21747V7.22997C10.6152 5.0836 12.2087 3.30787 14.2482 2.20642C16.2876 1.10496 18.6464 0.746185 20.9211 1.19144C23.1959 1.6367 25.2453 2.85834 26.7189 4.64747C28.1926 6.43659 28.9989 8.68208 29.0002 11Z" opacity="0.2" /> <path fill="currentColor" d="M19.0001 0C16.9572 0.00156822 14.955 0.57142 13.2175 1.64582C11.48 2.72023 10.0756 4.25682 9.16137 6.08375C8.07382 5.92514 6.96525 5.99232 5.90481 6.2811C4.84437 6.56988 3.85481 7.07407 2.99785 7.76221C2.14089 8.45036 1.43491 9.3077 0.923954 10.2808C0.412997 11.2538 0.108019 12.3217 0.0280446 13.4179C-0.05193 14.514 0.0948138 15.6149 0.459123 16.6518C0.823432 17.6887 1.39749 18.6395 2.14549 19.4447C2.8935 20.2499 3.7994 20.8924 4.80669 21.3321C5.81398 21.7717 6.90106 21.9991 8.00012 22H19.0001C21.9175 22 24.7154 20.8411 26.7783 18.7782C28.8412 16.7153 30.0001 13.9174 30.0001 11C30.0001 8.08262 28.8412 5.28473 26.7783 3.22183C24.7154 1.15893 21.9175 0 19.0001 0ZM19.0001 20H8.00012C6.40882 20 4.8827 19.3679 3.75748 18.2426C2.63226 17.1174 2.00012 15.5913 2.00012 14C2.00012 12.4087 2.63226 10.8826 3.75748 9.75736C4.8827 8.63214 6.40882 8 8.00012 8C8.13762 8 8.27512 8 8.41137 8.01375C8.1379 8.98558 7.99951 9.99043 8.00012 11C8.00012 11.2652 8.10547 11.5196 8.29301 11.7071C8.48055 11.8946 8.7349 12 9.00012 12C9.26533 12 9.51969 11.8946 9.70722 11.7071C9.89476 11.5196 10.0001 11.2652 10.0001 11C10.0001 9.21997 10.528 7.47991 11.5169 5.99987C12.5058 4.51982 13.9114 3.36627 15.556 2.68508C17.2005 2.0039 19.0101 1.82567 20.7559 2.17293C22.5018 2.5202 24.1054 3.37737 25.3641 4.63604C26.6228 5.89471 27.4799 7.49836 27.8272 9.24419C28.1745 10.99 27.9962 12.7996 27.315 14.4442C26.6338 16.0887 25.4803 17.4943 24.0002 18.4832C22.5202 19.4722 20.7801 20 19.0001 20Z" />
+               </svg></span><span class="gb-text"><strong>Contenido en alta calidad:</strong> Disfrute de la mejor calidad.</span></p>
+            </div>
+            <div class="gb-element-960f1c8b">
+             <figure class="wp-block-image size-full is-style-rounded">
+              <picture decoding="async" class="wp-image-610" style="aspect-ratio:3/4;object-fit:contain">
+               <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk.jpg.webp 786w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-300x296.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-768x758.jpg.webp 768w" sizes="(max-width: 786px) 100vw, 786px">
+               <img decoding="async" width="786" height="776" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20786%20776'%3E%3C/svg%3E" alt="ver peliculas en flujotv apk" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk.jpg 786w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-300x296.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-768x758.jpg 768w" data-lazy-sizes="(max-width: 786px) 100vw, 786px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk.jpg">
+               <noscript>
+                <img decoding="async" width="786" height="776" src="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk.jpg" alt="ver peliculas en flujotv apk" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk.jpg 786w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-300x296.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/ver-peliculas-en-flujotv-apk-768x758.jpg 768w" sizes="(max-width: 786px) 100vw, 786px">
+               </noscript>
+              </picture>
+             </figure>
+            </div>
+           </div>
+          </section>
+          <div class="gb-element-f4ebf630">
+           <div class="gb-element-4e40c6ad">
+            <div class="gbp-card gb-element-79dc7e47">
+             <div>
+              <h2 class="gb-text gbp-section__headline gb-text-4e1cbf8a"><strong>Más&nbsp;de 90 canales disponibles para disfrutar de eventos deportivos en vivo</strong></h2>
+             </div>
+             <div class="gb-text gbp-section__text gb-text-24a7abe7">
+              Canales de deporte de&nbsp;<strong>Quito, Guayaquil, Ambato, Cuenca, Manta, Loja, Santo Domingo, Ibarra, Machala, Otavalo</strong>&nbsp;y más. Ya no preguntes el <strong>costo de flujo tv</strong> para sus planes, aquí obtendrá el mejor precio con <strong>descuentos</strong> y algún <strong>cupón</strong>.
+             </div>
+             <div class="gb-element-583f75df">
+              <a class="gbp-button--primary gb-text-0adc12ba" href="0https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1"><span class="gb-shape">
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+                </svg></span><span class="gb-text">contratar</span></a>
+             </div>
+            </div>
+            <div class="gbp-card gb-element-d0926a93">
+             <h3 class="gb-text gbp-section__headline gb-text-90bc35d2">Deportes en vivo</h3>
+             <div class="gb-text gbp-section__text gb-text-ff4d4103">
+              Disfruta de tu contenido favorito desde cualquier dispositivo, con estabilidad garantizada y la mejor experiencia en streaming. <strong>¿Por qué pagar más por menos?</strong> Únete ahora y descubre la nueva forma de ver televisión: sin límites, sin interrupciones, solo entretenimiento de primera.<mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color"> ¡Suscríbete hoy y vive la diferencia!</mark> 🚀📺
+             </div>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="gbp-section gb-element-da7c2f8d">
+          <div class="gbp-section__inner gb-element-c52717a7">
+           <div class="gb-element-070e9d46">
+            <h4 class="gb-text gbp-section__headline gb-text-97ef0510"><mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">Contenido Kids</mark></h4>
+            <h2 class="gb-text gbp-section__headline gb-text-1f3bf57f"><strong>Un&nbsp;extenso catálogo de contenido <mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">diseñado</mark> especialmente <mark style="background-color:rgba(0, 0, 0, 0);color:#db4700" class="has-inline-color">para niños</mark>.</strong></h2>
+            <div class="gb-text gbp-section__text gb-text-2885b43d">
+             Contamos con una sección exclusiva para niños que incluye los mejores contenidos y los últimos estrenos de las principales plataformas de streaming.
+            </div>
+            <p class="db-sm-text gb-text-fc7be109"><span class="gb-shape">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 30" height="30" width="22">
+               <path fill="currentColor" d="M7 29L9 19L1 16L15 1L13 11L21 14L7 29Z" opacity="0.2" /> <path fill="currentColor" d="M21.9738 13.7712C21.9359 13.611 21.8591 13.4625 21.75 13.3391C21.641 13.2157 21.5032 13.1211 21.3488 13.0637L14.1475 10.3625L15.98 1.19625C16.0215 0.983272 15.9926 0.76258 15.8977 0.567473C15.8028 0.372365 15.6469 0.213429 15.4538 0.114648C15.2606 0.015866 15.0405 -0.0174009 14.8267 0.0198669C14.613 0.0571348 14.4172 0.162915 14.2688 0.321246L0.268791 15.3212C0.155085 15.4411 0.0728283 15.5872 0.0293705 15.7465C-0.0140872 15.9059 -0.0173928 16.0735 0.0197494 16.2345C0.0568916 16.3954 0.133324 16.5447 0.24222 16.6689C0.351115 16.7931 0.489081 16.8884 0.643791 16.9462L7.84754 19.6475L6.02004 28.8037C5.97855 29.0167 6.00745 29.2374 6.10238 29.4325C6.19732 29.6276 6.35314 29.7866 6.54632 29.8853C6.73951 29.9841 6.95959 30.0174 7.17334 29.9801C7.3871 29.9429 7.58293 29.8371 7.73129 29.6787L21.7313 14.6787C21.8429 14.5589 21.9234 14.4135 21.9657 14.2552C22.008 14.097 22.0108 13.9308 21.9738 13.7712ZM8.67129 25.75L9.98004 19.2025C10.0269 18.9703 9.98977 18.729 9.87531 18.5216C9.76085 18.3142 9.57648 18.1542 9.35504 18.07L2.75004 15.5887L13.3275 4.25625L12.02 10.8037C11.9732 11.036 12.0103 11.2773 12.1248 11.4847C12.2392 11.6921 12.4236 11.8521 12.645 11.9362L19.245 14.4112L8.67129 25.75Z" />
+              </svg></span><span class="gb-text"><strong>Canales 24/7 : </strong>Transmisiones todo el día.</span></p>
+            <p class="db-sm-text gb-text-388f934d"><span class="gb-shape">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" height="26" width="26">
+               <path fill="currentColor" d="M13 1V13L2.60745 19C1.55422 17.1758 0.999747 15.1064 0.999756 13C0.999764 10.8935 1.55426 8.82415 2.6075 6.99992C3.66074 5.17568 5.17562 3.66083 6.99988 2.60762C8.82414 1.55442 10.8935 0.999966 13 1Z" opacity="0.2" /> <path fill="currentColor" d="M13 0C10.4288 0 7.91543 0.762437 5.77759 2.1909C3.63975 3.61935 1.97351 5.64968 0.989572 8.02512C0.0056327 10.4006 -0.251811 13.0144 0.249797 15.5362C0.751405 18.0579 1.98953 20.3743 3.80762 22.1924C5.6257 24.0105 7.94208 25.2486 10.4638 25.7502C12.9856 26.2518 15.5995 25.9944 17.9749 25.0104C20.3503 24.0265 22.3807 22.3603 23.8091 20.2224C25.2376 18.0846 26 15.5712 26 13C25.9964 9.5533 24.6256 6.24882 22.1884 3.81163C19.7512 1.37445 16.4467 0.00363977 13 0ZM21.9838 6.65875L14 11.2675V2.04625C15.5853 2.19159 17.1201 2.67927 18.4985 3.47562C19.8769 4.27197 21.066 5.35802 21.9838 6.65875ZM12 2.04625V12.4213L3.01376 17.6087C2.27606 16.0098 1.933 14.2571 2.01344 12.498C2.09388 10.739 2.59546 9.0249 3.47601 7.49996C4.35656 5.97501 5.59034 4.68375 7.07364 3.73472C8.55695 2.7857 10.2464 2.20665 12 2.04625ZM13 24C11.239 23.9993 9.50389 23.5758 7.94058 22.7651C6.37726 21.9544 5.03144 20.7802 4.01626 19.3412L22.9863 8.39C23.7598 10.0659 24.0992 11.9096 23.9732 13.7512C23.8471 15.5927 23.2597 17.3729 22.265 18.9278C21.2702 20.4827 19.9002 21.7623 18.2811 22.6487C16.662 23.5351 14.8459 23.9998 13 24Z" />
+              </svg></span><span class="gb-text"><strong>Dibujos para kids:</strong> Series y films para niños.</span></p>
+            <p class="db-sm-text gb-text-aeafb2bd"><span class="gb-shape">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 29 31" height="31" width="29">
+               <path fill="currentColor" d="M22.194 23.2163C22.7754 20.9423 22.442 18.5309 21.2652 16.5L18.8902 12.3863C18.8479 12.3107 18.8012 12.2376 18.7502 12.1675L17.5252 10.3213L18.3465 11.75C17.9441 11.4314 17.4449 11.2599 16.9317 11.2639C16.4184 11.268 15.922 11.4474 15.5248 11.7724C15.1275 12.0974 14.8533 12.5485 14.7477 13.0507C14.6421 13.553 14.7113 14.0763 14.944 14.5338L12.0002 9.4388L10.6252 7.37505L11.4502 8.80505C11.0543 8.48636 10.5622 8.31109 10.054 8.30777C9.54581 8.30446 9.05146 8.47329 8.65144 8.78677C8.25143 9.10026 7.96933 9.53994 7.85108 10.0342C7.73283 10.5285 7.7854 11.0482 8.00022 11.5088L7.99272 11.515L7.09272 9.9563L6.54897 9.32379L5.72647 7.8938C5.4281 7.37695 5.34727 6.76276 5.50175 6.18632C5.65624 5.60988 6.03338 5.11841 6.55022 4.82005C7.06706 4.52168 7.68126 4.44084 8.2577 4.59533C8.83414 4.74981 9.3256 5.12695 9.62397 5.6438L10.524 7.20255L10.6252 7.37505C10.4775 7.11913 10.3816 6.83663 10.343 6.54366C10.3045 6.25069 10.324 5.95299 10.4005 5.66757C10.477 5.38214 10.609 5.11458 10.7889 4.88015C10.9688 4.64573 11.1931 4.44903 11.449 4.3013C11.7049 4.15356 11.9874 4.05767 12.2804 4.01912C12.5733 3.98056 12.871 4.00008 13.1565 4.07658C13.4419 4.15307 13.7094 4.28503 13.9439 4.46493C14.1783 4.64482 14.375 4.86913 14.5227 5.12505L17.5227 10.3213C17.2244 9.80445 17.1435 9.19026 17.298 8.61382C17.4525 8.03738 17.8296 7.54591 18.3465 7.24755C18.8633 6.94918 19.4775 6.86834 20.054 7.02283C20.6304 7.17731 21.1219 7.55445 21.4202 8.0713L23.7952 12.185C24.8065 13.9363 25.1984 15.9771 24.9079 17.9784C24.6174 19.9797 23.6614 21.8248 22.194 23.2163Z" opacity="0.2" /> <path fill="currentColor" d="M18.0001 3V1C18.0001 0.734784 18.1055 0.48043 18.293 0.292893C18.4805 0.105357 18.7349 0 19.0001 0C19.2653 0 19.5197 0.105357 19.7072 0.292893C19.8948 0.48043 20.0001 0.734784 20.0001 1V3C20.0001 3.26522 19.8948 3.51957 19.7072 3.70711C19.5197 3.89464 19.2653 4 19.0001 4C18.7349 4 18.4805 3.89464 18.293 3.70711C18.1055 3.51957 18.0001 3.26522 18.0001 3ZM22.4789 5.125C22.6361 5.2196 22.8166 5.26852 23.0001 5.26625C23.1717 5.26652 23.3405 5.22263 23.4903 5.13878C23.64 5.05493 23.7657 4.93396 23.8551 4.7875L24.8551 3.14875C24.9247 3.03661 24.9714 2.9118 24.9925 2.78153C25.0136 2.65125 25.0088 2.51809 24.9782 2.3897C24.9476 2.26132 24.8919 2.14026 24.8143 2.03351C24.7367 1.92676 24.6387 1.83642 24.5261 1.76771C24.4134 1.69899 24.2882 1.65326 24.1578 1.63316C24.0273 1.61305 23.8942 1.61896 23.7661 1.65055C23.6379 1.68213 23.5173 1.73877 23.4112 1.8172C23.305 1.89563 23.2154 1.99429 23.1476 2.1075L22.1476 3.745C22.0783 3.85723 22.0319 3.98207 22.011 4.11232C21.9901 4.24258 21.9952 4.37567 22.026 4.50395C22.0568 4.63222 22.1127 4.75313 22.1904 4.85972C22.2681 4.96631 22.3661 5.05647 22.4789 5.125ZM24.6589 11.6912C25.7645 13.593 26.2097 15.8072 25.9251 17.9886C25.6404 20.1699 24.6418 22.1957 23.0851 23.75C22.545 25.6376 21.4612 27.3244 19.9688 28.6001C18.4765 29.8758 16.6416 30.684 14.693 30.924C12.7444 31.1639 10.7683 30.8249 9.01108 29.9493C7.25385 29.0737 5.79323 27.7002 4.81136 26L0.436364 18.4212C0.169242 17.9579 0.0205913 17.4358 0.00359495 16.9013C-0.0134014 16.3667 0.101782 15.8363 0.33893 15.3569C0.576078 14.8775 0.92786 14.4641 1.36308 14.1533C1.79829 13.8424 2.30349 13.6438 2.83386 13.575L2.33386 12.7075C2.07089 12.252 1.9224 11.7394 1.90115 11.2139C1.8799 10.6883 1.98652 10.1655 2.21186 9.69022C2.43719 9.21496 2.77452 8.80149 3.19486 8.48531C3.6152 8.16914 4.106 7.9597 4.62511 7.875C4.36474 7.15807 4.36482 6.37241 4.62533 5.65553C4.88585 4.93865 5.39021 4.33624 6.05011 3.95375C6.65522 3.60567 7.35618 3.46126 8.0496 3.54184C8.74302 3.62241 9.39219 3.92369 9.90136 4.40125C10.2132 3.95107 10.6338 3.58699 11.124 3.34284C11.6142 3.09868 12.1582 2.98237 12.7054 3.00469C13.2526 3.02701 13.7853 3.18725 14.254 3.47052C14.7227 3.75379 15.1122 4.15091 15.3864 4.625L16.8864 7.22375C17.2111 6.79848 17.6359 6.45998 18.1229 6.23831C18.6099 6.01663 19.1441 5.91863 19.6781 5.95301C20.2121 5.98738 20.7293 6.15308 21.1839 6.43538C21.6385 6.71768 22.0163 7.10785 22.2839 7.57125L24.6589 11.6912ZM11.4901 6.875L12.2314 8.15875C12.4789 8.38479 12.6897 8.64793 12.8564 8.93875L14.3564 11.5325C14.8494 10.8922 15.5617 10.4568 16.3564 10.31L13.6551 5.625C13.4893 5.33791 13.2163 5.12842 12.8961 5.04263C12.5759 4.95683 12.2347 5.00175 11.9476 5.1675C11.6605 5.33327 11.451 5.60629 11.3652 5.9265C11.2794 6.24672 11.3244 6.5879 11.4901 6.875ZM6.59261 7.39375L7.33386 8.67875L7.37386 8.715C7.61638 8.36387 7.92584 8.06408 8.2845 7.83284C8.64315 7.6016 9.04394 7.44346 9.46386 7.3675L8.75761 6.14375C8.63402 5.92962 8.44971 5.75695 8.22799 5.64758C8.00627 5.53821 7.75709 5.49704 7.51197 5.52928C7.26684 5.56153 7.03679 5.66574 6.8509 5.82874C6.665 5.99173 6.53162 6.2062 6.46761 6.445C6.42456 6.60354 6.41345 6.76905 6.4349 6.93192C6.45636 7.09479 6.50997 7.25177 6.59261 7.39375ZM20.3989 17L18.0239 12.8862C17.8623 12.6093 17.6006 12.405 17.2927 12.3156C16.9848 12.2262 16.6544 12.2586 16.3696 12.4059C16.0849 12.5532 15.8677 12.8043 15.7628 13.1073C15.658 13.4103 15.6736 13.7419 15.8064 14.0337L17.2339 16.5C17.3665 16.7299 17.4023 17.0031 17.3335 17.2594C17.2647 17.5158 17.0969 17.7343 16.867 17.8669C16.6371 17.9995 16.3639 18.0353 16.1076 17.9665C15.8512 17.8977 15.6327 17.7299 15.5001 17.5L11.1251 9.94125C10.9535 9.66946 10.6837 9.47424 10.3719 9.39615C10.0601 9.31806 9.73016 9.36309 9.45068 9.5219C9.1712 9.68071 8.96364 9.94108 8.87112 10.2489C8.7786 10.5568 8.80823 10.8884 8.95386 11.175L12.0326 16.5C12.1024 16.6138 12.1487 16.7405 12.1688 16.8725C12.1889 17.0045 12.1823 17.1392 12.1495 17.2687C12.1166 17.3981 12.0582 17.5197 11.9776 17.6262C11.8971 17.7327 11.796 17.8219 11.6803 17.8887C11.5647 17.9555 11.4369 17.9985 11.3044 18.0151C11.1718 18.0316 11.0374 18.0215 10.9088 17.9853C10.7803 17.9491 10.6603 17.8875 10.556 17.8041C10.4517 17.7208 10.3651 17.6174 10.3014 17.5L6.23011 10.4575C6.14863 10.3142 6.03962 10.1884 5.90933 10.0874C5.77905 9.98641 5.63007 9.91218 5.47098 9.86899C5.31189 9.8258 5.14582 9.8145 4.98235 9.83575C4.81887 9.85699 4.66122 9.91037 4.51845 9.9928C4.37569 10.0752 4.25064 10.1851 4.15051 10.316C4.05037 10.447 3.97713 10.5964 3.93499 10.7558C3.89285 10.9152 3.88266 11.0813 3.90499 11.2447C3.92732 11.408 3.98174 11.5653 4.06511 11.7075L8.56511 19.5025C8.63077 19.6163 8.67339 19.7418 8.69052 19.8721C8.70765 20.0023 8.69896 20.1346 8.66495 20.2615C8.63094 20.3883 8.57227 20.5073 8.4923 20.6115C8.41233 20.7157 8.31262 20.8031 8.19886 20.8687C8.08511 20.9344 7.95953 20.977 7.8293 20.9942C7.69908 21.0113 7.56675 21.0026 7.43989 20.9686C7.31302 20.9346 7.19409 20.8759 7.08989 20.7959C6.9857 20.716 6.89827 20.6163 6.83261 20.5025L4.33261 16.1725C4.16568 15.8877 3.89288 15.6806 3.57376 15.5962C3.25464 15.5118 2.9151 15.5571 2.62925 15.7222C2.34339 15.8872 2.13441 16.1586 2.04793 16.4772C1.96144 16.7957 2.00447 17.1356 2.16761 17.4225L6.54261 25.0012C7.06553 25.9156 7.76388 26.7177 8.59757 27.3616C9.43127 28.0054 10.3839 28.4782 11.4008 28.7529C12.4177 29.0276 13.4788 29.0988 14.5233 28.9624C15.5678 28.826 16.575 28.4846 17.4872 27.9579C18.3995 27.4313 19.1987 26.7296 19.8391 25.8933C20.4794 25.057 20.9483 24.1024 21.2189 23.0844C21.4894 22.0664 21.5562 21.0049 21.4155 19.961C21.2748 18.9171 20.9293 17.9113 20.3989 17.0012V17ZM22.9264 12.6862L20.5514 8.5725C20.3844 8.28774 20.1116 8.08057 19.7925 7.9962C19.4734 7.91183 19.1339 7.95711 18.848 8.12216C18.5621 8.2872 18.3532 8.55862 18.2667 8.87717C18.1802 9.19572 18.2232 9.53555 18.3864 9.8225L19.1251 11.1038C19.3725 11.3308 19.5834 11.5948 19.7501 11.8862L22.1251 16C22.7924 17.1533 23.2229 18.4282 23.3914 19.75C23.8627 18.6162 24.0659 17.3889 23.9853 16.1637C23.9046 14.9385 23.5423 13.7485 22.9264 12.6862ZM28.4089 6.69375C28.3686 6.56874 28.3041 6.45289 28.219 6.35282C28.1339 6.25274 28.03 6.17041 27.9131 6.11051C27.7962 6.05061 27.6687 6.01433 27.5377 6.00374C27.4068 5.99314 27.2751 6.00843 27.1501 6.04875L25.2751 6.655C25.0478 6.72768 24.854 6.87926 24.7286 7.08236C24.6033 7.28546 24.5547 7.52668 24.5917 7.76246C24.6287 7.99823 24.7488 8.213 24.9303 8.36798C25.1118 8.52295 25.3427 8.60791 25.5814 8.6075C25.6858 8.6071 25.7895 8.59066 25.8889 8.55875L27.7639 7.9525C27.8889 7.91221 28.0047 7.8477 28.1048 7.76263C28.2049 7.67757 28.2872 7.57362 28.3471 7.45673C28.407 7.33984 28.4433 7.2123 28.4539 7.08138C28.4645 6.95047 28.4492 6.81875 28.4089 6.69375Z" />
+              </svg></span><span class="gb-text"><strong>Control Parental:</strong> Ten el control y bloquea contenido.</span></p>
+           </div>
+           <div class="gb-element-04ba0133">
+            <figure class="wp-block-image size-full is-style-rounded">
+             <picture decoding="async" class="wp-image-607" style="aspect-ratio:3/4;object-fit:contain">
+              <source type="image/webp" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv.jpg.webp 788w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-300x296.jpg.webp 300w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-768x758.jpg.webp 768w" sizes="(max-width: 788px) 100vw, 788px">
+              <img decoding="async" width="788" height="778" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20788%20778'%3E%3C/svg%3E" alt="series y pelis control parental flujotv" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv.jpg 788w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-300x296.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-768x758.jpg 768w" data-lazy-sizes="(max-width: 788px) 100vw, 788px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv.jpg">
+              <noscript>
+               <img decoding="async" width="788" height="778" src="https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv.jpg" alt="series y pelis control parental flujotv" srcset="https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv.jpg 788w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-300x296.jpg 300w, https://flujo-tv.com/wp-content/uploads/2025/04/series-y-pelis-control-parental-flujotv-768x758.jpg 768w" sizes="(max-width: 788px) 100vw, 788px">
+              </noscript>
+             </picture>
+            </figure>
+           </div>
+          </div>
+         </section>
+         <section class="gbp-section gb-element-97bcd836" style="--inline-bg-image: url(https://flujo-tv.com/wp-content/uploads/2025/04/flujotv-partido-de-futbol-en-vivo-scaled.jpg)">
+          <div class="gbp-section__inner gb-element-bd26d68a">
+           <div class="gb-element-06f22e97"></div>
+           <div class="gbp-card gb-element-8728b7d0">
+            <h2 class="gbp-section__headline gb-text-ad76cf84"><span class="gb-shape">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" height="26" width="26">
+               <path fill="currentColor" d="M24.3472 4V9H1.65967V4C1.65967 3.73478 1.76832 3.48043 1.96171 3.29289C2.15511 3.10536 2.41741 3 2.69092 3H23.3159C23.5894 3 23.8517 3.10536 24.0451 3.29289C24.2385 3.48043 24.3472 3.73478 24.3472 4Z" opacity="0.2" /> <path fill="currentColor" d="M23.3159 2H20.2222V1C20.2222 0.734784 20.1135 0.48043 19.9201 0.292893C19.7267 0.105357 19.4644 0 19.1909 0C18.9174 0 18.6551 0.105357 18.4617 0.292893C18.2683 0.48043 18.1597 0.734784 18.1597 1V2H7.84717V1C7.84717 0.734784 7.73852 0.48043 7.54512 0.292893C7.35172 0.105357 7.08942 0 6.81592 0C6.54241 0 6.28011 0.105357 6.08671 0.292893C5.89332 0.48043 5.78467 0.734784 5.78467 1V2H2.69092C2.14391 2 1.6193 2.21071 1.23251 2.58579C0.845716 2.96086 0.628418 3.46957 0.628418 4V24C0.628418 24.5304 0.845716 25.0391 1.23251 25.4142C1.6193 25.7893 2.14391 26 2.69092 26H23.3159C23.8629 26 24.3875 25.7893 24.7743 25.4142C25.1611 25.0391 25.3784 24.5304 25.3784 24V4C25.3784 3.46957 25.1611 2.96086 24.7743 2.58579C24.3875 2.21071 23.8629 2 23.3159 2ZM5.78467 4V5C5.78467 5.26522 5.89332 5.51957 6.08671 5.70711C6.28011 5.89464 6.54241 6 6.81592 6C7.08942 6 7.35172 5.89464 7.54512 5.70711C7.73852 5.51957 7.84717 5.26522 7.84717 5V4H18.1597V5C18.1597 5.26522 18.2683 5.51957 18.4617 5.70711C18.6551 5.89464 18.9174 6 19.1909 6C19.4644 6 19.7267 5.89464 19.9201 5.70711C20.1135 5.51957 20.2222 5.26522 20.2222 5V4H23.3159V8H2.69092V4H5.78467ZM23.3159 24H2.69092V10H23.3159V24Z" />
+              </svg></span><span class="gb-text">Disfrute de FlujoTV donde quiera</span></h2>
+            <div class="gb-text gbp-section__text gb-text-c959cda0">
+             Nuestra plataforma es compatible con&nbsp;<strong>Smart TV Android, TV Box, Amazon Fire Stick, emuladores de Android para PC Windows o Mac</strong>, así como con celulares y tabletas Android.
+            </div>
+            <div class="gb-element-1b162cb6">
+             <a class="gbp-button--primary gb-text-ff13a863" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-shape">
+               <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.005 9h13.938l.5-2H8.005V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5.004a1 1 0 0 1-1-1V4h-2V2h3a1 1 0 0 1 1 1zm0 14a2 2 0 1 1 0-4a2 2 0 0 1 0 4m12 0a2 2 0 1 1 0-4a2 2 0 0 1 0 4" fill="#fff" />
+               </svg></span><span class="gb-text">SUSCRIBIRSE</span></a>
+            </div>
+           </div>
+           <div class="gb-element-2e39d037"></div>
+          </div>
+         </section>
+         <div class="gbp-section">
+          <div class="gbp-section__inner gb-element-f6408808">
+           <div class="gb-element-e4a4f963">
+            <h2 class="gb-text gbp-section__headline gb-text-c2c67d0c" id="faqs">Preguntas Frecuentes</h2>
+            <div class="gb-text gbp-section__text gb-text-d93cd3a6">
+             Te preguntas <strong>¿cómo iniciar sesión en flujo tv?</strong>, ¿<strong>cuál es la contraseña de flujo tv</strong>?, o tienes más dudas?. Aquí respondemos algunas de las tantas inquietudes que se tiene sobre el servicio<strong>&nbsp;iptv de flujo tv Ecuador 2025.</strong>
+            </div>
+           </div>
+          </div>
+          <div class="gbp-section__inner gb-element-84fbfc6b">
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Qué es Flujo TV y para qué sirve?</h3>
+            <div class="gb-text gbp-section__text gb-text-8bef719f">
+             <strong>Flujo TV es un servicio IPTV que te permite ver televisión en vivo, películas, series, anime</strong>, música y contenido para adultos. Este servicio «todo en uno» ofrece tanto canales en directo como contenido bajo demanda (VOD).
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Cómo instalar Flujo TV en un Smart TV?</h3>
+            <div class="gb-text gbp-section__text gb-text-db0ef6bf">
+             Es importante saber que la <strong>app Flujo TV Global</strong> solo se puede instalar en Smart TVs con sistema operativo AndroidTV. Para televisores sin este sistema, como Samsung o LG, se recomienda usar un adaptador como el <strong>Fire Stick o un TV Box.</strong>
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Cómo pedir un demo de Flujo TV?</h3>
+            <div class="gb-text gbp-section__text gb-text-3bdd41df">
+             <strong>ACTUALMENTE NO HAY DEMOS</strong>, Anteriormente si se entregaba un demo de 6 horas a los clientes, <strong>pero por ahora no hay esa opción</strong>. Le recomendamos comprar 1 mes para probar de manera correcta la app ya que con 6 horas no era suficiente.
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Puedo ver Flujo TV en una PC o Mac?</h3>
+            <div class="gb-text gbp-section__text gb-text-c2d9497f">
+             Sí, puedes ver el <strong>contenido de Flujo TV </strong>en una computadora con Windows o en una laptop con Mac OS de dos maneras: 
+             <br>
+             1. Instala la aplicación en tu PC <strong>usando un emulador </strong>de Android como BlueStacks.
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Donde mandan mis datos de acceso al comprar?</h3>
+            <div class="gb-text gbp-section__text gb-text-98a9a1c4">
+             Una vez que hayas comprado un <strong>plan de Flujo TV</strong>, recibirás tus datos de acceso por correo electrónico. También puedes solicitar tu usuario y clave a través de este chat interno para obtener asistencia directa.
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Magistv es Flujo tv ?</h3>
+            <div class="gb-text gbp-section__text gb-text-763cb2d9">
+             Preguntas como: <strong>flujo tv es igual a magis tv</strong> o <strong>magistv ahora es flujo tv</strong> es la duda más frecuente. <span style="text-decoration: underline;">Anteriormente si lo hemos sido, pero ahora con esta nueva versión hemos cambiado de nombre</span>. Siga disfrutando de nuestra programación!
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿En cuántas pantallas puedo ver simultáneamente?</h3>
+            <div class="gb-text gbp-section__text gb-text-2178f6b2">
+             Todos los planes de <strong>Flujo TV permiten ver en hasta 3 pantallas simultáneamente</strong>, ya sea en la misma o en diferentes direcciones IP. Puedes compartir tu cuenta con varios Smart TVs dentro de tu hogar.
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Cuánta velocidad de internet debo tener?</h3>
+            <div class="gb-text gbp-section__text gb-text-32b44108">
+             <strong>Se recomienda una velocidad de internet de al menos 10 Mbps</strong> para evitar retrasos o congelamientos al usar Flujo TV. Puedes verificar la velocidad de tu conexión en fast.com.
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Cómo registrar o crear cuenta Flujo TV?</h3>
+            <div class="gb-text gbp-section__text gb-text-cb68c0a0">
+             Para el <strong>registro de flujo tv</strong> es necesario hacer el pago de una plan, luego se entregan sus credenciales por correo o por chat de Whatsapp. <strong>Registráte</strong> y disfruta de tu cuenta VIP!
+            </div>
+           </div>
+           <div>
+            <h3 class="gb-text gbp-card__title">¿Cómo cancelar o anular mi suscripción?</h3>
+            <div class="gb-text gbp-section__text gb-text-6c203270">
+             Si decides dejar de usar el servicio de <strong>Flujo TV oficial</strong>, simplemente deja de pagar, ya que no hay pagos automáticos como en Netflix o Disney Plus.
+            </div>
+           </div>
+          </div>
+          <div class="gbp-section__inner gb-element-d304f5c0">
+           <div class="gb-element-62cb873b">
+            <h3 class="gb-text gbp-section__headline gb-text-ca9e042a">Tienes más dudas del servicio?</h3>
+            <div class="gb-text gbp-section__text gb-text-316bcde3">
+             No dude en comunicarse con nosotros para atender todas las inquietudes que tenga, vamos a ayudarle siempre!
+            </div>
+            <div class="gb-element-3b9b9008">
+             <a class="gbp-button--primary gb-text-8b97f2a4" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1" rel="nofollow"><span class="gb-text">SOREM FLUJO </span><span class="gb-shape">
+               <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.36 4C6.58 4 2.644 9.857 4.824 15.21l.933 2.288a.5.5 0 0 1-.15.579L3.634 19.66a.5.5 0 0 0 .313.89h7.82a8.73 8.73 0 0 0 8.733-8.732C20.5 7.5 17 4 12.682 4z" fill="#fff" />
+               </svg></span></a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+     </main>
+    </div>
+   </div>
+  </div>
+  <div class="site-footer">
+   <div class="gb-element-094f3315">
+    <div class="gb-element-a45bc473">
+     <div class="gb-element-9674bf56">
+      <figure class="wp-block-image size-full is-resized">
+       <img decoding="async" width="960" height="531" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20960%20531'%3E%3C/svg%3E" alt="flujo tv descargar" class="wp-image-341" style="aspect-ratio:2;object-fit:cover;width:400px;height:auto" data-lazy-srcset="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png 960w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-300x166.png 300w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-768x425.png 768w" data-lazy-sizes="(max-width: 960px) 100vw, 960px" data-lazy-src="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png">
+       <noscript>
+        <img decoding="async" width="960" height="531" src="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png" alt="flujo tv descargar" class="wp-image-341" style="aspect-ratio:2;object-fit:cover;width:400px;height:auto" srcset="https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar.png 960w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-300x166.png 300w, https://flujo-tv.com/wp-content/uploads/2024/10/flujo-tv-descargar-768x425.png 768w" sizes="(max-width: 960px) 100vw, 960px">
+       </noscript>
+      </figure>
+     </div>
+     <p class="has-text-align-center" style="font-size:14px">App compatible con: <strong>TV Boxes, Smart TV, Fire Stick, PC / MAC, Celulares</strong>. Funciona en países como: <em>México, Ecuador, Colombia, Bolivia, Chile, Perú, Estados Unidos, Paraguay, Uruguay, España</em> y más. Disfrute de canales en vivo, películas HD, series de TV, canales de adultos +18 y deportes en vivo.</p>
+     <div class="gb-element-6be51742">
+      <a class="gb-text gb-text-37e24b87" href="#">Flujo tv 2025</a> <a class="gb-text gb-text-258634ba" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/#planes">PRECIOS</a> <a class="gb-text gb-text-55f796c3" href="https://api.whatsapp.com/send/?phone=%2B51904016110&text&type=phone_number&app_absent=0&wame_ctl=1/">DESCARGAR</a> <a class="gb-text gb-text-da9967aa" href="#">soporte</a> <a class="gb-text gb-text-dbd05014" href="https://flujo-tv.com/#faqs">FAQS</a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/generatepress\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+  <script type="rocketlazyloadscript" id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><!--[if lte IE 11]>
+<script src="https://flujo-tv.com/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.5.1" id="generate-classlist-js"></script>
+<![endif]-->
+  <script id="generate-menu-js-extra" type="f036bf5eb8e5658e063ea1fd-text/javascript">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Abrir el submen\u00fa","closeSubMenuLabel":"Cerrar el submen\u00fa"};
+</script>
+  <script type="rocketlazyloadscript" src="https://flujo-tv.com/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.5.1" id="generate-menu-js" defer></script>
+  <script type="f036bf5eb8e5658e063ea1fd-text/javascript">window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script>
+  <script data-no-minify="1" async src="https://flujo-tv.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js" type="f036bf5eb8e5658e063ea1fd-text/javascript"></script>
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="f036bf5eb8e5658e063ea1fd-|49" defer></script><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1745015020 -->
+ </body>
+</html>
